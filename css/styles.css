@@ -5,30 +5,25 @@
   text-align: center;
 }
 
-.box1 {
-  grid-column: 1 / 5;
-  grid-auto-flow: 2/5;
+.cabecera {
+  height: 30%;
+  background-color: white;
 }
 
-.box2 {
-  grid-column: 1 / 5;
-  grid-row: 3/6;
-}
-
-.box3 {
-  grid-row: 2 / 4;
-  grid-column: 2 / 5;
+.titulo {
+  text-align: center;
+  color: black;
+  padding-left: 50%;
 }
 
 .container {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 3fr 1fr;
-  grid-gap: 10px;
+  width: 100vw;
 }
 
 .cuerpo {
+  height: 30%;
+  width: 100%;
   display: grid;
   grid-template-columns: 30vw 30vw 30vw;
   grid-gap: 10px;
@@ -37,6 +32,9 @@
 }
 
 .cuerpo-b {
+  height: 30%;
+  width: 100%;
+  padding-left: 50%;
   display: inline-flex;
   grid-template-columns: 30vw 30vw 30vw;
   grid-gap: 10px;
