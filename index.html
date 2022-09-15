@@ -21,10 +21,10 @@
     <title>Calculadora</title>
   </head>
   <body>
-    <h2>Calculadora</h2>
-    <input placeholder="" id="barra-calc"/>
     <div class="container text-center">
-      <div class="row row-cols-4">
+      <h2>Calculadora Básica</h2>
+      <input placeholder="" id="barra-calc" style="width: 40%;"/>
+      <div class="row row-cols-4" style="margin-left: 30%; margin-right: 30%; m-4">
         <button class="col" onclick="calc('1')">1</button>
         <button class="col" onclick="calc('2')">2</button>
         <button class="col" onclick="calc('3')">3</button>
@@ -40,7 +40,7 @@
         <button class="col" onclick="calc('0')">0</button>
         <button class="col" onclick="calc('.')">.</button>
         <button class="col" onclick="clean()">C</button>
-        <button class="col"onclick="execute()">=</button>
+        <button class="col" onclick="execute()">=</button>
       </div>
     </div>
   </body>
