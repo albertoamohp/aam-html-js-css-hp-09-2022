@@ -1,0 +1,18 @@
+{
+  "name": "reto-vanilla",
+  "version": "0.0.1",
+  "description": "retos de ejercicios vanilla",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "alberto amo",
+  "license": "MIT"
+}
