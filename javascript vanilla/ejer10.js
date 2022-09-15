@@ -3,12 +3,36 @@ const readline = require("readline").createInterface({
   output: process.stdout,
 });
 
-readline.question('Please enter the first number : ', (answer1) => {
-  for(let i = 1; i< 4; i++){
-  readline.question('Please enter the second number : ', (i) => {
-      var result = (+answer1) + (+i);
-      console.log(`The sum of above two numbers is ${result}`);
-      //readline.close();
-  });
+let suma = 0;
+let cont = 0;
+let total = 0;
+readline.question("Introduce el total de ventas: ", (answer1) => {
+  total = answer1;
+  if (cont < total) {
+    cont += 1;
+    preguntar(cont);
+  }
+
+  if (cont > total) {
+    //readline.close();
+    console.log("La Suma Total es:", suma);
+    //readline.close();
   }
 });
+
+function preguntar(indice) {
+  if (cont <= total)
+    readline.question(
+      `Introduzca el valor de la venta: ${indice} `,
+      (answer2) => {
+        suma += parseInt(answer2);
+        cont += 1;
+        preguntar(cont);
+      }
+    );
+
+  if (cont > total) {
+    console.log('TOTAL es:', suma);
+    readline.close();
+  }
+}
