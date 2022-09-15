@@ -8,7 +8,7 @@ readline.question('Please enter the first number : ', (answer1) => {
   readline.question('Please enter the second number : ', (i) => {
       var result = (+answer1) + (+i);
       console.log(`The sum of above two numbers is ${result}`);
-      readline.close();
+      //readline.close();
   });
   }
 });
