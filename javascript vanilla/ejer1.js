@@ -4,11 +4,11 @@ class Persona {
     dni = '';
     sexo = 'Hombre';
 
-    constructor(nombre,edad,dni,sexo) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.dni = dni;
-        this.sexo = sexo;
+    constructor() {
+        this.nombre = '';
+        this.edad = 0;
+        this.dni = '';
+        this.sexo = 'Hombre';
     }
 }
 

@@ -4,11 +4,11 @@ class Electrodomestico {
   consumo_energetico = "F";
   peso = 5;
 
-  constructor(precio_base, color, consumo_energetico, peso) {
-    this.precio_base = precio_base;
-    this.color = color;
-    this.consumo_energetico = consumo_energetico;
-    this.peso = peso;
+  constructor() {
+    this.precio_base = 100;
+    this.color = "blanco";
+    this.consumo_energetico = "F";
+    this.peso = 5;
   }
 
   getPrecioBase() {
@@ -99,6 +99,7 @@ class Lavadora extends Electrodomestico {
   carga = carga_defecto;
 
   constructor(carga) {
+    super();
     this.carga = carga;
   }
 
@@ -122,7 +123,8 @@ class Television extends Electrodomestico {
   resolucion = 20;
   cuatroK = false;
 
-  constructor(resolucion, cuatroK) {
+  constructor(resolucion,cuatroK) {
+    super();
     this.resolucion = resolucion;
     this.cuatroK = cuatroK;
   }
@@ -146,20 +148,19 @@ class mainApp {
   crearArrayLavadoras() {
     let arr_lavadora = [];
     for (let i = 1; i <= 5; i++) {
-      let lava = new Lavadora((carga = 1));
-      arr_lavadora.push(lava);
+      arr_lavadora.push(new Lavadora(parseInt(Math.random() * 100)));
     }
-    console.log(arr_lavadora);
+    //console.log(arr_lavadora);
     return arr_lavadora;
   }
 
   crearArrayTelevisores() {
     let arr_televisor = [];
     for (let i = 1; i <= 5; i++) {
-      arr_televisor.push(new Television(Math.floor(Math.random() * 100), true));
+      arr_televisor.push(new Television(Math.floor(Math.random() * 100), Boolean(Math.round(Math.random()))));
     }
 
-    console.log(arr_televisor);
+    //console.log(arr_televisor);
     return arr_televisor;
   }
 }

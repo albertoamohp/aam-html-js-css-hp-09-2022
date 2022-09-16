@@ -2,9 +2,9 @@ class Password {
   longitud = 8;
   contraseña;
 
-  constructor(longitud, contraseña) {
-    this.longitud = longitud;
-    this.contraseña = contraseña;
+  constructor() {
+    this.longitud = 8;
+    this.contraseña = '';
   }
 }
 randomPassword();
