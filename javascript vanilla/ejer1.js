@@ -1,10 +1,12 @@
-let var1 = 1;
-let var2 = 3;
-
-if(var1 < var2) {
-    console.log('el mayor es', var2);
+class Persona {
+    nombre = '';
+    edad = 0;
+    dni = '';
+    sexo = 'Hombre';
 }
 
-if(var1 == var2) {
-    console.log('valen lo mismo var1:',var2, ' var2:', var2);
+function instantiate() {
+    let persona1 = new Persona('Juan', 22, '123A', 'Hombre');
+    let persona2 = new Persona('Maria', 32, '12345A', 'Mujer');
+    let persona3 = new Persona('Antonia', 42, '123456A', 'Mujer');
 }
