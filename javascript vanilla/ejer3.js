@@ -38,7 +38,7 @@ class Electrodomestico {
   }
 
   precioFinal() {
-    let precio_final = 0;
+    let precio_final = this.precio_base;
     switch (this.consumo_energetico) {
       case "A":
         precio_final += 100;
@@ -108,8 +108,7 @@ class Lavadora extends Electrodomestico {
   }
 
   precioFinal() {
-    let precio_final = 0;
-    precio_final = super.precioFinal();
+    let precio_final = super.precioFinal();
 
     if (this.carga > 30) {
       return (precio_final += 50);
@@ -123,7 +122,7 @@ class Television extends Electrodomestico {
   resolucion = 20;
   cuatroK = false;
 
-  constructor(resolucion,cuatroK) {
+  constructor(resolucion, cuatroK) {
     super();
     this.resolucion = resolucion;
     this.cuatroK = cuatroK;
@@ -157,14 +156,31 @@ class mainApp {
   crearArrayTelevisores() {
     let arr_televisor = [];
     for (let i = 1; i <= 5; i++) {
-      arr_televisor.push(new Television(Math.floor(Math.random() * 100), Boolean(Math.round(Math.random()))));
+      arr_televisor.push(
+        new Television(
+          Math.floor(Math.random() * 100),
+          Boolean(Math.round(Math.random()))
+        )
+      );
     }
 
     //console.log(arr_televisor);
     return arr_televisor;
   }
+
+  calcularPrecioFinal() {
+    let arr_lavadora = this.crearArrayLavadoras();
+    let arr_televisor = this.crearArrayTelevisores();
+
+    for (let lava of arr_lavadora) {
+      console.log('\n',lava, "\n precio final es:", lava.precioFinal());
+    }
+
+    for (let tele of arr_televisor) {
+      //console.log(tele);
+    }
+  }
 }
 
 let iniciar = new mainApp();
-iniciar.crearArrayLavadoras();
-iniciar.crearArrayTelevisores();
+iniciar.calcularPrecioFinal();
