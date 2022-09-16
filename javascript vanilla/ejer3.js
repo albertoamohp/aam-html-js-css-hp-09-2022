@@ -173,11 +173,11 @@ class mainApp {
     let arr_televisor = this.crearArrayTelevisores();
 
     for (let lava of arr_lavadora) {
-      console.log('\n',lava, "\n precio final es:", lava.precioFinal());
+      console.log("\n", lava, "\n precio final es:", lava.precioFinal());
     }
 
     for (let tele of arr_televisor) {
-      //console.log(tele);
+      console.log("\n", tele, "\n precio final es:", tele.precioFinal());
     }
   }
 }
