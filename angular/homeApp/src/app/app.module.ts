@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieComponent } from './pie/pie.component';
+import { ContadorComponent } from './contador/contador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabeceraComponent,
-    PieComponent
+    PieComponent,
+    ContadorComponent
   ],
   imports: [
     BrowserModule,
