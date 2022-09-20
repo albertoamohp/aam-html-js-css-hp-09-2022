@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { articulo } from './articulo';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'admon-articulos';
-  articulos: { codigo: string; descripcion: string; precio: number }[] = [
+  articulos: articulo[] = [
     {
       codigo: '1',
       descripcion: 'papas',
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  articuloMostrar: { codigo: string; descripcion: string; precio: number } = {
+  articuloMostrar: articulo = {
     codigo: '',
     descripcion: '',
     precio: 0,
@@ -46,7 +47,7 @@ export class AppComponent implements OnInit {
   seleccionar(codigo: string) {
     this.articuloMostrar = this.articulos.find(
       (item) => item.codigo === codigo
-    );
+    ) as articulo;
   }
 
   addArticulo(codigo: string, descripcion: string, precio: number) {}
