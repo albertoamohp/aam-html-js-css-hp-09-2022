@@ -51,4 +51,10 @@ export class AppComponent implements OnInit {
   }
 
   addArticulo(codigo: string, descripcion: string, precio: number) {}
+
+  modify() {
+    console.log('entro en modify');
+    let index = this.articulos.findIndex(x=> x.codigo == this.articuloMostrar.codigo);
+    this.articulos[index] = this.articuloMostrar;
+  }
 }

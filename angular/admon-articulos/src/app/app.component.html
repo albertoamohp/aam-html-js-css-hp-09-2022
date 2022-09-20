@@ -17,8 +17,8 @@
   </tr>
 </table>
 
-<div>Codigo: <input placeholder="{{articuloMostrar.codigo}}"/></div>
-<div>Descripcion: <input placeholder="{{articuloMostrar.descripcion}}"/></div>
-<div>Precio: <input placeholder="{{articuloMostrar.precio}}"/></div>
+<div>Codigo: <input [(ngModel)]="articuloMostrar.codigo"></div>
+<div>Descripcion: <input [(ngModel)]="articuloMostrar.descripcion"/></div>
+<div>Precio: <input [(ngModel)]="articuloMostrar.precio"/></div>
 
-<div><button>Agregar</button><button>Modificar</button></div>
+<div><button>Agregar</button><button (click)="modify()">Modificar</button></div>
