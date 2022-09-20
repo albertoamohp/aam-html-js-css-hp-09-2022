@@ -45,16 +45,20 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   seleccionar(codigo: string) {
-    this.articuloMostrar = this.articulos.find(
+    let valor = this.articulos.find(
       (item) => item.codigo === codigo
     ) as articulo;
+
+    this.articuloMostrar = {...valor};
   }
 
   addArticulo(codigo: string, descripcion: string, precio: number) {}
 
   modify() {
     console.log('entro en modify');
-    let index = this.articulos.findIndex(x=> x.codigo == this.articuloMostrar.codigo);
+    let index = this.articulos.findIndex(
+      (x) => x.codigo == this.articuloMostrar.codigo
+    );
     this.articulos[index] = this.articuloMostrar;
   }
 }
