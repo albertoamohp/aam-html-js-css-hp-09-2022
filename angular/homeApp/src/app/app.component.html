@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center">
+<div style="display: grid; width: 15%;">
+  <input placeholder="{{input}}"/> 
+  <input />
+  <div style="display: flex;">
+    <div style="display: grid; width: 100%;">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(9)">9</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(8)">8</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(7)">7</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(6)">6</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(5)">5</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(4)">4</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(3)">3</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(2)">2</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(1)">1</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary rounded-0" (click)="update('.')">.</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update(0)">0</button>
+        <button type="button" class="btn btn-primary rounded-0" (click)="update('00')">00</button>
+      </div>
+    </div>
+
+    <div style="display: grid">
+      <button type="button" class="btn btn-success rounded-0" (click)="clear()">DEL</button>
+      <button type="button" class="btn btn-success rounded-0" (click)="update('/')>/</button>
+      <button type="button" class="btn btn-success rounded-0" (click)="update('*')">X</button>
+      <button type="button" class="btn btn-success rounded-0" (click)="update('-')">-</button>
+      <button type="button" class="btn btn-success rounded-0" (click)="update('+')">+</button>
+      <button type="button" class="btn btn-success rounded-0" (click)="calc()">=</button>
+    </div>
+  </div>
+</div>
+</div>
