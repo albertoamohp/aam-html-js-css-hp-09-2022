@@ -12,7 +12,7 @@
     <th>{{ articulo.codigo }}</th>
     <th>{{ articulo.descripcion }}</th>
     <th>{{ articulo.precio }}</th>
-    <th><button>Borrar?</button></th>
+    <th><button (click)="borrar(articulo.codigo)">Borrar?</button></th>
     <th><button (click)="seleccionar(articulo.codigo)">Seleccionar</button></th>
   </tr>
 </table>
@@ -21,4 +21,4 @@
 <div>Descripcion: <input [(ngModel)]="articuloMostrar.descripcion"/></div>
 <div>Precio: <input [(ngModel)]="articuloMostrar.precio"/></div>
 
-<div><button>Agregar</button><button (click)="modify()">Modificar</button></div>
+<div><button (click)="addArticulo(articuloMostrar.codigo,articuloMostrar.descripcion,articuloMostrar.precio)">Agregar</button><button (click)="modify()">Modificar</button></div>
