@@ -37,6 +37,13 @@
     <button class="m-3 btn btn-sm btn-danger" (click)="removeAllBooks()">
       Remove All
     </button>
+
+    <button
+      class="m-3 btn btn-sm btn-danger"
+      (click)="removeBook(currentBook.id+ '')"
+    >
+      Remove Selected
+    </button>
   </div>
 
   <div class="col-md-6">

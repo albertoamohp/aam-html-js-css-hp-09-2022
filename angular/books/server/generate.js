@@ -1,6 +1,6 @@
 const faker = require('faker')
 const database = { books: [] }
-const total = 50
+const total = 10
 for (let i = 1; i < total; i++) {
   database.books.push({
     id: i,
