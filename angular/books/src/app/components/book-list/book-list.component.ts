@@ -44,7 +44,14 @@ export class BookListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeAllBooks(): void {}
+  removeAllBooks(): void {
+   const postsIdsBook = this.books?.map((post)=> post.id);
+   postsIdsBook?.forEach((id)=> this.removeBook(id));
+  }
+
+  removeBook(id: string) {
+    this.bookService.delete(id);
+  }
 
   searchTitle(): void {
     this.currentBook = {};
