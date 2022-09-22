@@ -16,6 +16,7 @@ import { Personaje } from '../personaje';
 export class PersonajesComponent implements OnInit {
   personajes?: Personaje[];
   carga = true;
+  mostrarError = false;
   constructor(private personajesService: PersonajesService) {}
 
   ngOnInit(): void {
@@ -51,7 +52,9 @@ export class PersonajesComponent implements OnInit {
         this.personajes = data.results;
       },
       error: (e) => {
-        console.log('complete');
+        console.log('ERROR');
+        this.carga = false;
+        this.mostrarError = true;
       },
       complete: () => {
         this.carga = false;

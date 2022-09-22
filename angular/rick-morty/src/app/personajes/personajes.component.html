@@ -15,6 +15,16 @@
 
   <div
     class="d-flex justify-content-center align-items-center flex-column"
+    *ngIf="mostrarError"
+    style="height: 100%;"
+  >
+    <div style="height: 300px; font-size: 50px">
+      No se han encontrado resultados...
+    </div>
+  </div>
+
+  <div
+    class="d-flex justify-content-center align-items-center flex-column"
     *ngIf="carga"
     style="height: 100%"
   >
@@ -23,6 +33,8 @@
       role="status"
       style="height: 300px; width: 300px; font-size: 50px"
     ></div>
-    <span class="sr-only" style="font-size: 30px; margin-top: 20px;">Cargando...</span>
+    <span class="sr-only" style="font-size: 30px; margin-top: 20px"
+      >Cargando...</span
+    >
   </div>
 </div>
