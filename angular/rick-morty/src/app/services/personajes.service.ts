@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PersonajesService {
   baseURL = 'https://rickandmortyapi.com/api';
+  searchName = '';
   constructor(private http: HttpClient) {}
 
   getAll(arrayPersonajes?:number[]): Observable<any> {
@@ -39,6 +40,6 @@ export class PersonajesService {
   }
 
   search(name:string) :Observable<any> {
-    return this.http.get(this.baseURL+'?name='+name);
+    return this.http.get(this.baseURL+'/character/?name='+name);
   }
 }

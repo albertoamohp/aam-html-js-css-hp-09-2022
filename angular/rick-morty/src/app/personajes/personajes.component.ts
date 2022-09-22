@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { PersonajesService } from '../services/personajes.service';
 import { Personaje } from '../personaje';
 
@@ -13,7 +19,12 @@ export class PersonajesComponent implements OnInit {
   constructor(private personajesService: PersonajesService) {}
 
   ngOnInit(): void {
-    this.retrieveCharacters();
+    if (this.personajesService.searchName === '') {
+      this.retrieveCharacters();
+    } else {
+      console.log('entro');
+      this.searchCharacters(this.personajesService.searchName);
+    }
   }
 
   retrieveCharacters(): void {
@@ -37,10 +48,12 @@ export class PersonajesComponent implements OnInit {
     this.personajesService.search(name).subscribe({
       next: (data) => {
         this.carga = true;
-        this.personajes = data;
+        this.personajes = data.results;
       },
       error: (e) => {
         console.log('complete');
+      },
+      complete: () => {
         this.carga = false;
       },
     });
