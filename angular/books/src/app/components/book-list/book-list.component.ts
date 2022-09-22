@@ -45,16 +45,20 @@ export class BookListComponent implements OnInit {
   }
 
   removeAllBooks(): void {
-   const postsIdsBook = this.books?.map((post)=> post.id);
-   console.log(postsIdsBook);
-   postsIdsBook?.forEach((id)=> this.removeBook(id));
+    this.bookService.getAll().subscribe({
+      next: (data) => {
+        for (let book of data) {
+          this.removeBook(book.id);
+        }
+      },
+    });
   }
 
   removeBook(id: string) {
     this.bookService.delete(id).subscribe({
       complete: () => {
         this.refreshList();
-      }
+      },
     });
   }
 
