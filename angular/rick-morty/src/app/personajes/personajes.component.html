@@ -1,7 +1,11 @@
-<div class="card" style="width: 18rem" *ngFor="let personaje of personajes">
-  <img src="{{personaje.image}}" class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">{{personaje.name}}</h5>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="card" style="width: 18rem" *ngFor="let personaje of personajes">
+      <img src="{{ personaje.image }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ personaje.name }}</h5>
+        <a href="#" class="btn btn-primary" style="width: 100%;">See more</a>
+      </div>
+    </div>
   </div>
 </div>
