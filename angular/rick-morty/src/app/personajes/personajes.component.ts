@@ -5,12 +5,12 @@ import { Personaje } from '../personaje';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
-  styleUrls: ['./personajes.component.scss']
+  styleUrls: ['./personajes.component.scss'],
 })
 export class PersonajesComponent implements OnInit {
   personajes?: Personaje[];
   carga = true;
-  constructor(private personajesService: PersonajesService) { }
+  constructor(private personajesService: PersonajesService) {}
 
   ngOnInit(): void {
     this.retrieveCharacters();
@@ -19,11 +19,12 @@ export class PersonajesComponent implements OnInit {
   retrieveCharacters(): void {
     this.personajesService.getAll(this.generateRandomArray()).subscribe({
       next: (data) => {
+        this.carga = true;
         this.personajes = data;
-        console.log(this.personajes);
+        //console.log(this.personajes);
       },
       error: (e) => {
-        console.log('error',e);
+        console.log('error', e);
       },
       complete: () => {
         console.log('complete');
@@ -32,13 +33,25 @@ export class PersonajesComponent implements OnInit {
     });
   }
 
+  searchCharacters(name: string) {
+    this.personajesService.search(name).subscribe({
+      next: (data) => {
+        this.carga = true;
+        this.personajes = data;
+      },
+      error: (e) => {
+        console.log('complete');
+        this.carga = false;
+      },
+    });
+  }
+
   generateRandomArray(): number[] {
     let arrayNumber = [];
-    for(let i=0; i<50; i++) {
-      arrayNumber.push(Math.floor(Math.random() * 826) + 1)
+    for (let i = 0; i < 50; i++) {
+      arrayNumber.push(Math.floor(Math.random() * 826) + 1);
     }
 
     return arrayNumber;
   }
-
 }

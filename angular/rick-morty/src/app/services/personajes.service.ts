@@ -37,4 +37,8 @@ export class PersonajesService {
   delete(id: any): Observable<any> {
     return this.http.delete(`${this.baseURL}/${id}`);
   }
+
+  search(name:string) :Observable<any> {
+    return this.http.get(this.baseURL+'?name='+name);
+  }
 }
