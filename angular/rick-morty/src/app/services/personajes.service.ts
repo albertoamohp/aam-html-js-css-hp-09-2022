@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { personaje } from '../personaje';
+import { Personaje } from '../personaje';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,16 +10,16 @@ export class PersonajesService {
   baseURL = 'https://rickandmortyapi.com/api';
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<personaje[]> {
-    return this.http.get<personaje[]>(this.baseURL+'/character');
+  getAll(): Observable<any> {
+    return this.http.get<any>(this.baseURL+'/character');
   }
 
-  get(id: any): Observable<personaje[]> {
-    return this.http.get<personaje[]>(`${this.baseURL}/character/${id}`);
+  get(id: any): Observable<Personaje[]> {
+    return this.http.get<Personaje[]>(`${this.baseURL}/character/${id}`);
   }
 
-  findByName(name: any): Observable<personaje[]> {
-    return this.http.get<personaje[]>(
+  findByName(name: any): Observable<Personaje[]> {
+    return this.http.get<Personaje[]>(
       `${this.baseURL}/character/?name=${name}`
     );
   }

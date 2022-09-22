@@ -1,4 +1,4 @@
-export class personaje {
+export class Personaje {
   id?: number;
   name?: string;
   status?: string;
