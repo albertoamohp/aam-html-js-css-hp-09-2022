@@ -9,6 +9,7 @@ import { Personaje } from '../personaje';
 })
 export class PersonajesComponent implements OnInit {
   personajes?: Personaje[];
+  carga = true;
   constructor(private personajesService: PersonajesService) { }
 
   ngOnInit(): void {
@@ -26,13 +27,14 @@ export class PersonajesComponent implements OnInit {
       },
       complete: () => {
         console.log('complete');
+        this.carga = false;
       },
     });
   }
 
   generateRandomArray(): number[] {
     let arrayNumber = [];
-    for(let i=0; i<20; i++) {
+    for(let i=0; i<50; i++) {
       arrayNumber.push(Math.floor(Math.random() * 826) + 1)
     }
 
