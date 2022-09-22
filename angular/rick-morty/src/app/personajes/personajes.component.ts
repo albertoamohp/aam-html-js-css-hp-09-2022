@@ -16,9 +16,9 @@ export class PersonajesComponent implements OnInit {
   }
 
   retrieveCharacters(): void {
-    this.personajesService.getAll().subscribe({
+    this.personajesService.getAll(this.generateRandomArray()).subscribe({
       next: (data) => {
-        this.personajes = data.results;
+        this.personajes = data;
         console.log(this.personajes);
       },
       error: (e) => {
@@ -28,6 +28,15 @@ export class PersonajesComponent implements OnInit {
         console.log('complete');
       },
     });
+  }
+
+  generateRandomArray(): number[] {
+    let arrayNumber = [];
+    for(let i=0; i<20; i++) {
+      arrayNumber.push(Math.floor(Math.random() * 826) + 1)
+    }
+
+    return arrayNumber;
   }
 
 }

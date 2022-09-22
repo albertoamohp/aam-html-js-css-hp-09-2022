@@ -10,8 +10,14 @@ export class PersonajesService {
   baseURL = 'https://rickandmortyapi.com/api';
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<any> {
+  getAll(arrayPersonajes?:number[]): Observable<any> {
+    if(!arrayPersonajes) {
     return this.http.get<any>(this.baseURL+'/character');
+    }
+
+    else {
+      return this.http.get<any>(this.baseURL+'/character/'+arrayPersonajes);
+    }
   }
 
   get(id: any): Observable<Personaje[]> {
